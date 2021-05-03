@@ -70,6 +70,14 @@ const cartReducer: Reducer<CartState, Action> = (
         ...state,
       };
     }
+    case ActionType.CLEAR_CART: {
+      return {
+        ...state,
+        items: [],
+        totalNumberOfItems: 0,
+        totalPrice: 0,
+      };
+    }
     default:
       return state;
   }

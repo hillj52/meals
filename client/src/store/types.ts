@@ -11,4 +11,5 @@ export type CartContextState = {
   getNumberOfItems: () => number;
   addItem: (item: CartItem) => void;
   removeItem: (id: string) => void;
+  clearCart: () => void;
 };

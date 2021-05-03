@@ -9,6 +9,7 @@ const cartContextDefaultValues: CartContextState = {
   getNumberOfItems: () => (0),
   addItem: () => {},
   removeItem: () => {},
+  clearCart: () => {},
 }
 
 export const CartContext = createContext<CartContextState>(cartContextDefaultValues);
@@ -28,6 +29,10 @@ const CartProvider: React.FC = ({ children }) => {
     dispatch({ type: ActionType.REMOVE_ITEM, id });
   }
 
+  const clearCart = () => {
+    dispatch({ type: ActionType.CLEAR_CART });
+  }
+
   return (
     <CartContext.Provider value={{
       items: cartState.items,
@@ -35,6 +40,7 @@ const CartProvider: React.FC = ({ children }) => {
       getNumberOfItems,
       addItem,
       removeItem,
+      clearCart,
     }}
     >
       {children}

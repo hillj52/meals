@@ -11,4 +11,8 @@ interface RemoveItemAction {
   id: string;
 }
 
-export type Action = AddItemAction | RemoveItemAction;
+interface ClearCartAction {
+  type: ActionType.CLEAR_CART;
+}
+
+export type Action = AddItemAction | RemoveItemAction | ClearCartAction;
